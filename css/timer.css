@@ -91,16 +91,6 @@
     }
 }
 
-@media screen and (max-width: 450px) {
-    .number-div {
-        width: 60rem;
-    }
-
-    .counter-div {
-        gap: 5rem;
-    }
-}
-
 @keyframes slideInFromTop {
     from {
         transform: translateY(-80%);
