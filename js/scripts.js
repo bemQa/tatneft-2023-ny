@@ -4,22 +4,7 @@ $(window).scroll(function(evt) {
     scrollTop = $(this).scrollTop();
 });
 
-$(document).ready(function() {
-    // анимация меню
-    $('.menu').click(function(e){
-        e.preventDefault();
-        (this.classList.contains('active') === true) ? this.classList.remove('active') : this.classList.add('active');
-
-        $('.header').toggleClass('active');
-        $('body').on('click', function (e) {
-            let div = $('.menu-links-wrapper, .menu');
-
-            if (!div.is(e.target) && div.has(e.target).length === 0) {
-                $('.header, .menu').removeClass('active');
-            }
-        });
-    });
-    
+$(document).ready(function() {   
     // якоря для ссылок
     $('.anchor[href^="#"]').click(function () {
         $('.header').removeClass('active'); 
@@ -144,29 +129,6 @@ $(document).ready(function() {
     }
     openAccordion();
 
-    // таймер завершения акции
-    let end_date = $('.end-event-date').val();
-    $('.countdown__widget').countdown(end_date)
-    .on('update.countdown', function (event) {
-        $(this).html(event.strftime(
-            `<div class="countdown__widget-part days">
-                <div class="countdown__widget-number">%D</div>
-                <span class="countdown__widget-text">дней</span>
-            </div>
-            <div class="countdown__widget-part hours">
-                <div class="countdown__widget-number">%H</div>
-                <span class="countdown__widget-text">часов</span>
-            </div>
-            <div class="countdown__widget-part minutes">
-                <div class="countdown__widget-number">%M</div>
-                <span class="countdown__widget-text">минут</span>
-            </div>`
-        ));
-    })
-    .on('finish.countdown', function(event) {
-        $(this).parent().find('.end-event-countdown-text').text('Срок регистрации чеков завершен');
-    });
-
     // модалки
     $('body').on('click','.open-modal', function(e){
         e.preventDefault();
@@ -199,35 +161,9 @@ $(document).ready(function() {
 
         $('.winners-week-tabs').removeClass('active');
         $('.winners-week-tabs[data-tab="'+ tab +'"]').addClass('active');
+        $('.winners-week-tab, .winners-week-tab-item').removeClass('active');
+        $('.winners-week-tabs[data-tab="'+ tab +'"] .winners-week-tab:first, .winners-prizes-tab-item[data-tab="'+ tab +'"] .winners-week-tab-item:first').addClass('active');
     });
-
-    // слайдер табы победителей 
-    let slider_winners_tabs = $('.winners-week-tabs');
-    if (slider_winners_tabs.length) {
-        slider_winners_tabs.owlCarousel({
-            center: false,
-            items: 4,
-            autoWidth: true,
-            loop: false,
-            nav: true,
-            dots: false,
-            margin: 0,
-            mouseDrag: false,
-            touchDrag: true,
-            navSpeed: 1300,
-            responsive: {
-                0: {
-                    items: 3
-                },
-                480: {
-                    items: 5
-                },
-                768: {
-                    items: 4
-                }
-            }
-        });
-    }
 
     // select2
     if($('.select').length > 1) {

@@ -348,7 +348,7 @@ body .laptop-visible {
 .ip_cell {
     position: relative;
     padding-bottom: 16rem;
-    margin-bottom: 8rem;
+    /* margin-bottom: 8rem; */
 }
 
 .input_text {
@@ -815,6 +815,10 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    background: #fff;
+}
+
+.wrapper-stub {
     background: #84BD00;
 }
 
@@ -846,6 +850,7 @@ body {
     height: 84rem;
     margin: auto;
     background: #fff;
+    box-shadow: 0rem 10rem 20rem 0rem rgba(0, 0, 0, 0.10);
     border-radius: 50rem;
     z-index: 10;
     transition: all .3s ease;
@@ -863,139 +868,39 @@ body {
     z-index: 11;
 }
 
-.menu {
-    position: relative;
-    display: none;
-    width: 24rem;
-    height: 16rem;
-    margin-left: 16rem;
-    background-color: transparent;
-    font-size: 0;
-    text-indent: -999rem;
-    z-index: 11;
-}
-
-.menu span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 100%;
-    height: 2rem;
-    background: #000;
-    transition: background 0s .3s;
-}
-
-.menu::before,
-.menu::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 100%;
-    height: 2rem;
-    background: #000;
-    transition-duration: 0.3s, 0.3s;
-    transition-delay: 0.3s, 0s;
-}
-
-.menu::before {
-    top: -100%;
-    transition-property: top, transform;
-}
-
-.menu::after {
-    bottom: -100%;
-    transition-property: bottom, transform;
-}
-
-.menu.active::before {
-    top: 0;
-    transform: rotate(45deg);
-}
-
-.menu.active::after {
-    bottom: 0;
-    transform: rotate(-45deg);
-}
-
-.menu.active::before,
-.menu.active::after {
-    transition-delay: 0s, 0.3s;
-}
-
-.menu.active span {
-    background: none;
-}
-
 .menu-links-wrapper {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: -8rem;
-    left: -20rem;
-    right: -20rem;
     margin: auto;
-    width: calc(100% + 40rem);
-    min-height: 100vh;
-    height: 100%;
-    padding: 94rem 40rem 40rem;
-    background: #fff;
-    z-index: 10;
-    opacity: 0;
-    pointer-events: none;
-    transition: all .2s ease;
-}
-
-.header.active .menu-links-wrapper {
-    opacity: 1;
-    pointer-events: all;
 }
 
 .menu-links {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.menu-links-wrapper .menu-links {
-    flex-direction: column;
-    width: 100%;
-}
-
-.menu-links-wrapper .menu-link {
+.menu-link {
     position: relative;
-    max-width: max-content;
-    margin: 8rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 68rem;
+    width: 100%;
+    margin: 0 20rem;
     font-size: 18rem;
     line-height: 1.3;
     color: #000;
 }
 
-.menu-links-wrapper .menu-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2rem;
-    left: 0;
-    margin: auto;
-    width: 0%;
-    height: 2rem;
-    background: #000;
-    transition: all .3s ease;
+.menu-link img {
+    width: 24rem;
+    margin-bottom: 6rem;
 }
 
-.menu-links-wrapper .menu-link::after {
-    border-radius: 2rem;
-}
-
-.menu-links-wrapper .menu-link:hover::after {
-    width: 100%;
+.menu-link:hover {
+    color: #84BD00;
 }
 
 .logo {
@@ -1009,7 +914,7 @@ body {
 }
 
 .header .logo {
-    margin-right: 40rem;
+    margin-right: auto;
 }
 
 .header-buttons {
@@ -1067,6 +972,7 @@ body {
 
 .btn-big {
     width: 100%;
+    font-size: 24rem;
 }
 
 .btn-invert {
@@ -1171,88 +1077,82 @@ body {
     font-size: 60rem;
     line-height: 1;
     letter-spacing: 0.6rem;
+    text-align: center;
 }
 
 .section-faq {
+    background: #84BD00;
+    border-radius: 50rem;
     color: #fff;
 }
 
 .faq-blocks {
     display: flex;
     justify-content: space-between;
+    margin-top: 24rem;
 }
 
 .feedback-block {
-    max-width: 580rem;
+    max-width: 400rem;
     width: 100%;
-    color: #fff;
+    padding: 36rem 66rem 22rem;
+    background: #F4F4F4;
+    border-radius: 40rem;
+    color: #606060;
 }
 
-.faq-wrap {
-    max-height: 430rem;
-}
-
-.feedback-block-text {
-    font-size: 18rem;
-    line-height: 1.3;
-}
-
-.feedback-block-text + .btn {
-    margin-top: 48rem;
+.feedback-title {
+    margin-bottom: 16rem;
+    font-weight: 400;
+    font-size: 24rem;
+    line-height: 1.1;
+    text-align: center;
 }
 
 .faq-block {
-    max-width: 710rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 900rem;
     width: 100%;
 }
 
+.faq-wrap {
+    max-width: 668rem;
+    width: 100%;
+    max-height: 460rem;
+    margin: 0 auto;
+}
+
 .faq-item {
-    background: #F8F8F8;
-    border: 1rem solid #F8F8F8;
-    border-radius: 15rem;
-    margin-bottom: 25rem;
+    border-bottom: 1rem solid #B0C77B;
     transition: all 0.3s ease;
-}
-
-.faq-item.active {
-    background: #F9F9FA;
-    box-shadow: 0rem 0rem 10rem 0rem rgb(0, 0, 0, 0.1);
-}
-
-.faq-item:hover {
-    background: #F9F9FA;
 }
 
 .faq-item-title {
     position: relative;
     margin: 0;
-    padding: 20rem;
-    padding-right: 60rem;
-    font-weight: 500;
+    padding: 16rem 60rem 16rem 0;
+    font-weight: 400;
     font-size: 18rem;
     line-height: 1.3;
-    color: #000;
+    color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-.faq-item-title:hover {
-    color: #84BD00;
 }
 
 .faq-item-title::after {
     content: '';
     position: absolute;
-    top: 20rem;
-    right: 20rem;
+    top: 16rem;
+    right: 0;
     width: 24rem;
     height: 24rem;
-    background: url(../img/icon-plus-hover.svg) center/contain no-repeat;
+    background: url(../img/icon-plus.svg) center/contain no-repeat;
     transition: all 0.3s ease;
 }
 
 .faq-item.active .faq-item-title::after {
-    background: url(../img/icon-plus.svg) center/contain no-repeat;
     transform: rotate(-45deg);
 }
 
@@ -1262,11 +1162,12 @@ body {
 
 .faq-item-text {
     display: none;
-    padding: 20rem;
+    padding: 16rem 0;
     padding-top: 0;
-    font-size: 18rem;
+    font-weight: 100;
+    font-size: 16rem;
     line-height: 1.3;
-    color: #606060;
+    color: #f4f4f4;
 }
 
 .faq-item-text ul {
@@ -1284,7 +1185,7 @@ body {
 
 .faq-item-text ul li::before {
     content: '●';
-    color: #84BD00;
+    color: #fff;
     display: inline-block;
     width: 17rem;
     margin-left: -17rem;
@@ -1355,9 +1256,11 @@ body {
 .winners-week-tabs {
     position: relative;
     display: none !important;
-    max-width: 1000rem;
+    max-width: 328rem;
     width: 100%;
-    min-height: 48rem;
+    min-height: 46rem;
+    border-radius: 46rem;
+    overflow: hidden;
 }
 
 .winners-week-tabs.active {
@@ -1378,9 +1281,11 @@ body {
     align-items: center;
     justify-content: center;
     padding: 12rem 16rem;
+    background: #F4F4F4;
     font-weight: 500;
     font-size: 24rem;
     line-height: 1;
+    letter-spacing: 0.24rem;
     color: #000;
     white-space: nowrap;
 }
@@ -1392,6 +1297,11 @@ body {
     width: 1rem;
     height: 100%;
     background: #AAA;
+}
+
+.winners-week-tab:last-child::after,
+.owl-item:last-child .winners-week-tab::after {
+    display: none;
 }
 
 .winners-week-tab:hover {
@@ -1497,16 +1407,22 @@ body {
 .winners-prizes-tabs {
     display: flex;
     align-items: center;
-    margin-left: auto;
-}
-
-.winners-prizes-tabs .winners-prizes-tab:not(:last-child) {
-    margin-right: 16rem;
+    border-radius: 46rem;
+    overflow: hidden;
 }
 
 .winners-prizes-tab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12rem 40rem;
     background: #F4F4F4;
-    color: #AAA;
+    font-weight: 500;
+    font-size: 24rem;
+    line-height: 1;
+    color: #84BD00;
+    white-space: nowrap;
 }
 
 .winners-prizes-tab:hover {
@@ -1529,12 +1445,25 @@ body {
     display: block;
 }
 
+.winners-table .table-head {
+    padding: 6rem 0;
+    background: rgb(132 189 0 / 60%);
+    border-radius: 60rem;
+}
+
 .table-col {
     padding: 12rem 40rem;
     font-size: 18rem;
-    line-height: 1.1;
-    letter-spacing: 0.18rem;
+    line-height: 1.3;
     color: #000;
+}
+
+.winners-table .table-head .table-col {
+    font-weight: 400;
+    font-size: 24rem;
+    line-height: 1;
+    letter-spacing: 0.24rem;
+    color: #fff;
 }
 
 .table-row {
@@ -1543,7 +1472,7 @@ body {
     align-items: baseline;
 }
 
-.table-row::after {
+/* .table-row::after {
     content: '';
     position: absolute;
     left: 0;
@@ -1551,23 +1480,47 @@ body {
     width: 100%;
     height: 1rem;
     background: #AAA;
-}
+} */
 
 .table-head .table-col {
     color: #606060;
 }
 
+.table-body {
+    max-height: 250rem;
+}
+
 .winners-table .table-body {
-    max-height: 220rem;
+    max-height: 350rem;
+}
+
+.winners-table .table-row {
+    justify-content: space-between;
+}
+
+.winners-table .table-body .table-row:nth-child(even) {
+    background: rgb(176 199 123 / 10%);
+    border-radius: 60rem;
 }
 
 .winners-table .table-col {
-    width: 190rem;
+    max-width: 300rem;
+    width: 100%;
     min-width: 190rem;
 }
 
-.winners-table .table-col:last-child {
+.winners-table .table-body .table-col {
+    padding-top: 16rem;
+    padding-bottom: 16rem;
+}
+
+.table-col:last-child {
     width: 100%;
+}
+
+.superprize-winner .table-col {
+    font-weight: 400;
+    font-size: 24rem;
 }
 
 .section-mainprize {
@@ -1600,12 +1553,31 @@ body {
 }
 
 .section-prizes {
+    position: relative;
     background: #fff;
+}
+
+.decor-tree-left,
+.decor-tree-right {
+    position: absolute;
+    top: -152rem;
+    width: 460rem;
+    height: 650rem;
+}
+
+.decor-tree-left {
+    left: -213rem;
+    background: url(../img/decor-tree-left.svg) center/contain no-repeat;
+}
+
+.decor-tree-right {
+    right: -213rem;
+    background: url(../img/decor-tree-right.svg) center/contain no-repeat;
 }
 
 .section-prizes .page-title {
     text-align: center;
-    color: #000;
+    color: #E4002B;
 }
 
 .red-text {
@@ -1616,97 +1588,172 @@ body {
     color: #84BD00;
 }
 
+.prize-garant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prize-garant-text {
+    max-width: 310rem;
+    width: 100%;
+    margin-top: 80rem;
+    font-weight: 400;
+    font-size: 32rem;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #231F20;
+}
+
+.prize-garant-text:first-child {
+    text-align: right;
+}
+
+.prize-garant-img {
+    width: 182rem;
+    height: 200rem;
+    margin: 0 36rem;
+}
+
+.prizes-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.prizes-title {
+    margin: 60rem 0;
+    font-weight: 400;
+    font-size: 44rem;
+    line-height: 1;
+    letter-spacing: 0.88rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 .prizes {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 48rem;
 }
 
 .prize {
     position: relative;
-    width: 345rem;
-    height: 225rem;
+    width: 328rem;
 }
 
 .prize-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18rem;
+    width: 240rem;
+    height: 240rem;
+}
+
+.prize-total {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -12rem;
     right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
-    width: 180rem;
-    height: 180rem;
-}
-
-.prize-info {
-    margin-top: 140rem;
-    padding: 16rem;
-    border-radius: 8rem;
-    text-align: center;
+    width: 80rem;
+    height: 80rem;
+    border-radius: 80rem;
+    font-size: 24rem;
+    line-height: 1;
+    letter-spacing: -0.48rem;
     color: #fff;
 }
 
-.red-team .prize-info {
+.prizes-everyday .prize-total {
+    background: #92C83E;
+}
+
+.prizes-everyweek .prize-total,
+.prize-main .prize-total {
     background: #E4002B;
 }
 
-.green-team .prize-info {
-    background: #84BD00;
-}
-
 .prize-name {
-    margin-bottom: 8rem;
     font-weight: 400;
     font-size: 24rem;
-    line-height: 1;
-    letter-spacing: 0.24rem;
-}
-
-.prize-text {
-    font-size: 16rem;
-    line-height: 1.3;
-}
-
-.game-mainpage-block {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 480rem;
-    padding: 40rem;
-    background: #fff;
-    border-radius: 24rem;
-    overflow: hidden;
-}
-
-.game-mainpage-block::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 710rem;
-    height: 100%;
-    background: url(../img/gameimage-mainpage.png) center/cover no-repeat;
-}
-
-.game-mainpage-info {
-    max-width: 548rem;
-    width: 100%;
+    line-height: 1.1;
+    text-align: center;
     color: #000;
 }
 
-.game-mainpage-text {
-    margin-bottom: 48rem;
+.prize-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60rem 0 30rem;
+}
+
+.prize-main-text {
+    max-width: 310rem;
+    width: 100%;
     font-weight: 400;
-    font-size: 24rem;
+    font-size: 44rem;
     line-height: 1;
-    letter-spacing: 0.24rem;
+    text-transform: uppercase;
+    color: #231F20;
+}
+
+.prize-main-text:first-child {
+    text-align: right;
+}
+
+.prize-main-img {
+    position: relative;
+    width: 240rem;
+    height: 180rem;
+    margin: 0 44rem;
+}
+
+.prize-main-img .prize-total {
+    top: -50rem;
+    right: -70rem;
+}
+
+.section-game-mainpage {
+    min-height: 540rem;
+    background: url(../img/bg-game-main.svg) center/cover no-repeat;
+    border-radius: 50rem;
+}
+
+.game-mainpage-info {
+    max-width: 440rem;
+    width: 100%;
+    margin-left: 130rem;
+    padding: 30rem 0;
+    color: #000;
+}
+
+.game-mainpage-title {
+    font-weight: 400;
+    font-size: 44rem;
+    line-height: 1;
+    letter-spacing: 0.88rem;
+    text-transform: uppercase;
+}
+
+.game-mainpage-text {
+    max-width: 320rem;
+    margin: 36rem 0;
+    font-weight: 400;
+    font-size: 32rem;
+    line-height: 1;
+}
+
+.game-mainpage-info .btn {
+    max-width: 300rem;
+}
+
+.section-steps {
+    background: linear-gradient(181deg, #7EBB00 0.93%, rgba(255, 255, 255, 0.00) 96.63%);
+    border-radius: 50rem 50rem 0 0;
 }
 
 .section-steps .page-title {
@@ -1717,7 +1764,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 48rem 0 32rem;
+    margin: 56rem 0 0;
 }
 
 .step {
@@ -1725,21 +1772,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 345rem;
-    height: 338rem;
-    padding: 24rem;
-    background: #fff;
-    border-radius: 16rem;
     text-align: center;
-}
-
-.step-img {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 180rem;
-    height: 180rem;
-    margin: 0 auto;
 }
 
 .step-title {
@@ -1747,6 +1780,7 @@ body {
     font-weight: 400;
     font-size: 32rem;
     line-height: 1;
+    text-transform: uppercase;
     color: #E4002B;
 }
 
@@ -1756,11 +1790,23 @@ body {
     color: #000;
 }
 
+.step-text span {
+    color: #E4002B;
+}
+
+.step .btn {
+    margin-top: 10rem;
+}
+
 .section-main {
     position: relative;
     height: 980rem;
     padding-top: 180rem;
     background: radial-gradient(80.5% 51.78% at 62.79% 56.58%, #C7FBBC 0%, #90C63E 70%);
+}
+
+.section-mainpage {
+    border-radius: 0 0 50rem 50rem;
 }
 
 .section-main .gift-decor {
@@ -1794,179 +1840,16 @@ body {
     color: #000;
 }
 
-.end-event-countdown {
-    max-width: 380rem;
-    width: 100%;
-}
-
-.end-event-countdown-text {
-    margin-bottom: 18rem;
-    font-weight: 400;
-    font-size: 36rem;
-    line-height: 1;
-    color: #000;
-}
-
-.countdown__widget {
-    display: flex;
-    align-items: baseline;
-}
-
-.countdown__widget-part {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.countdown__widget-part:not(:last-child) {
-    margin-right: 10rem;
-}
-
-.countdown__widget-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 120rem;
-    height: 70rem;
-    margin-bottom: 15rem;
-    padding: 12rem 40rem;
-    background: #fff;
-    border-radius: 16rem;
-    font-weight: 400;
-    font-size: 48rem;
-    line-height: normal;
-    color: #84BD00;
-}
-
-.countdown__widget-text {
-    font-weight: 400;
-    font-size: 24rem;
-    line-height: 1;
-    text-align: center;
-    color: #000;
-}
-
-.section-main .page-title {
-    font-size: 64rem;
-    letter-spacing: 0;
-    color: #84BD00;
-}
-
 .main-text {
-    margin-bottom: 8rem;
-    font-weight: 400;
-    font-size: 24rem;
-    line-height: 1;
-    color: #000;
+    margin-bottom: 36rem;
+}
+
+.main-btn {
+    display: inline-flex;
 }
 
 .lk-page {
     background: #fff;
-}
-
-.lk-page .header {
-    top: 0;
-    max-width: 100%;
-    background: #F4F4F4;
-    border-radius: 0 0 16rem 16rem;
-}
-
-.lk-page .header-container {
-    max-width: 100%;
-}
-
-.lk-page .header .logo {
-    margin-right: 160rem;
-}
-
-.header-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 320rem;
-    width: 100%;
-    margin-left: auto;
-}
-
-.header-menu-link {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6rem 12rem 6rem 44rem;
-    background: transparent;
-    border-radius: 4rem;
-    font-size: 24rem;
-    line-height: 1;
-    letter-spacing: 0.24rem;
-    color: #000;
-}
-
-.header-menu-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 12rem;
-    bottom: 0;
-    margin: auto;
-    width: 24rem;
-    height: 24rem;
-    transition: all .3s ease;
-}
-
-.header-menu-link.bonuses-link::before {
-    background: url(../img/icon-gift.svg) center/contain no-repeat;
-}
-
-.header-menu-link.transactions-link::before {
-    background: url(../img/icon-money.svg) center/contain no-repeat;
-}
-
-.header-menu-link:hover {
-    color: #84BD00;
-}
-
-.header-menu-link.active {
-    background: #84BD00;
-    color: #fff;
-}
-
-.header-menu-link.bonuses-link:hover::before {
-    background: url(../img/icon-gift-hover.svg) center/contain no-repeat;
-}
-
-.header-menu-link.bonuses-link.active::before {
-    background: url(../img/icon-gift-active.svg) center/contain no-repeat;
-}
-
-.header-menu-link.transactions-link:hover::before {
-    background: url(../img/icon-money-hover.svg) center/contain no-repeat;
-}
-
-.header-menu-link.transactions-link.active::before {
-    background: url(../img/icon-money-active.svg) center/contain no-repeat;
-}
-
-.header-links {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    max-width: 290rem;
-    width: 100%;
-    margin-left: auto;
-    z-index: 11;
-}
-
-.profile-name {
-    max-width: 240rem;
-    font-size: 18rem;
-    line-height: 1.3;
-    color: #000;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .logout-link {
@@ -2494,16 +2377,26 @@ body {
     }
 
     .section {
-        padding: 40rem 0;
+        padding: 70rem 0;
     }
 
     .page-title {
-        font-size: 32rem;
+        font-size: 48rem;
         letter-spacing: 0;
+    }
+
+    .decor-tree-left, 
+    .decor-tree-right {
+        display: none;
+    }
+
+    .section-faq {
+        padding-bottom: 30rem;
     }
 
     .faq-blocks {
         flex-direction: column;
+        margin-top: 48rem;
     }
 
     .faq-block {
@@ -2513,22 +2406,23 @@ body {
 
     .feedback-block {
         max-width: 100%;
-        margin-top: 24rem;
+        margin-top: 40rem;
     }
 
-    .feedback-block-text {
-        font-size: 24rem;
-        letter-spacing: 0.24rem;
-    }
-
-    .feedback-block-text + .btn {
-        margin-top: 16rem;
+    .feedback-form {
+        max-width: 260rem;
+        width: 100%;
+        margin: 0 auto;
     }
 
     .modal_content {
         top: 0;
         width: 100%;
         padding: 40rem 20rem;
+    }
+
+    .section-winners .container {
+        padding: 0;
     }
     
     .winners-nav-block {
@@ -2537,31 +2431,33 @@ body {
     }
 
     .winners-week-tabs {
-        max-width: 100%;
-        margin-bottom: 16rem;
+        margin: 0 auto 16rem;
+        order: -1;
     }
 
     .winners-prizes-tabs {
-        margin-left: 0;
+        margin: 0 auto;
     }
 
-    .section-mainprize {
-        height: 392rem;
+    .winners-table .table-row {
+        width: calc(100% - 30rem);
+    }
+
+    .winners-table .table-col {
+        padding-left: 20rem;
+        padding-right: 20rem;
+    }
+
+    .winners-table .simplebar-track.simplebar-vertical {
+        right: 8rem;
+    }
+
+    .section-prizes {
         padding-top: 40rem;
     }
 
-    .mainprize-block {
-        max-width: 354rem;
-        padding: 40rem;
-    }
-
-    .mainprize-block .page-title {
-        max-width: 250rem;
-        font-size: 24rem;
-    }
-
-    .mainprize-text {
-        font-size: 18rem;
+    .prize-garant-text {
+        max-width: 210rem;
     }
 
     .prize {
@@ -2570,39 +2466,42 @@ body {
 
     .prize:nth-child(1),
     .prize:nth-child(2) {
-        margin-bottom: 16rem;
+        margin-bottom: 60rem;
     }
 
-    .game-mainpage-block {
-        height: auto;
-        padding: 40rem 20rem 480rem;
+    .prize-main {
+        margin-top: 80rem;
     }
 
-    .game-mainpage-block::before {
-        top: auto;
-        left: 0;
-        width: 100%;
-        height: 480rem;
+    .prize-main-text {
+        max-width: 194rem;
+        margin-top: 60rem;
+        font-size: 32rem;
+    }
+
+    .section-game-mainpage {
+        padding: 70rem 0;
+        background: url(../img/bg-game-main-laptop.svg) center/cover no-repeat;
     }
 
     .game-mainpage-info {
-        max-width: 100%;
-    }
-
-    .game-mainpage-text {
-        margin-bottom: 24rem;
-        font-size: 18rem;
-        line-height: 1.3;
-        letter-spacing: 0;
+        margin-left: 0;
     }
 
     .step {
-        width: 354rem;
+        width: 180rem;
     }
 
-    .step:nth-child(1),
-    .step:nth-child(2) {
-        margin-bottom: 16rem;
+    .step-title {
+        font-size: 24rem;
+    }
+
+    .step-text {
+        font-size: 16rem;
+    }
+
+    .step-text br {
+        display: none;
     }
 
     .section-main {
@@ -2610,11 +2509,22 @@ body {
         padding-top: 120rem;
     }
 
+    .section-mainpage {
+        height: 740rem;
+    }
+
     .section-main .gift-decor {
         top: 100rem;
         right: -246rem;
         width: 511rem;
         height: 366rem;
+    }
+
+    .section-mainpage .gift-decor {
+        top: 234rem;
+        right: -80rem;
+        width: 678rem;
+        height: 494rem;
     }
 
     .stub-title {
@@ -2627,23 +2537,19 @@ body {
         display: none;
     }
 
+    .section-mainpage .stub-title {
+        margin-bottom: 20rem;
+        font-size: 100rem;
+    }
+
     .stub-text {
         margin-bottom: 50rem;
         font-size: 30rem;
         letter-spacing: 0.3rem;
     }
 
-    .section-main .page-title {
-        font-weight: 400;
-        font-size: 32rem;
-    }
-
     .main-text {
-        font-size: 16rem;
-    }
-
-    .main-text span {
-        font-size: 24rem;
+        margin-bottom: 40rem;
     }
 
     .lk-page .header .logo {
@@ -2708,27 +2614,31 @@ body {
         height: 32rem;
     }
 
-    .btn {
-        font-size: 24rem;
-    }
-
     .header-buttons .btn {
         padding: 10rem 20rem;
         font-size: 16rem;
     }
 
     .menu-links-wrapper {
-        padding-top: 76rem;
+        position: fixed;
+        left: -40rem;
+        right: -40rem;
+        bottom: 0;
+        width: 100%;
+        height: 58rem;
+        margin: 0 auto;
+        padding: 8rem 0 0;
+        background: #fff;
+        box-shadow: 0rem -6rem 10rem 0rem rgba(0, 0, 0, 0.05);
+        transition: all .3s ease;
     }
 
-    .menu-links-wrapper .end-event-countdown {
-        display: flex;
-        margin-top: auto;
-        margin-left: 0;
+    .menu-link img {
+        margin-bottom: 4rem;
     }
 
-    .menu-links-wrapper .header-buttons {
-        margin-top: 16rem;
+    .menu-link {
+        font-size: 16rem;
     }
 
     .footer-menu {
@@ -2754,28 +2664,55 @@ body {
         margin: 0;
     }
 
+    .section {
+        padding: 40rem 0;
+    }
+
     .page-title {
         font-weight: 400;
+        font-size: 52rem;
     }
 
-    .faq-wrap {
-        max-height: 436rem;
+    .section-faq {
+        padding: 20rem 0;
+        border-radius: 30rem;
     }
 
-    .faq-item {
-        margin-bottom: 8rem;
+    .feedback-block {
+        padding: 36rem 40rem 22rem;
+    }
+
+    .section-winners {
+        padding: 70rem 0;
+    }
+
+    .winners-week-tabs {
+        max-width: 280rem;
+        min-height: 40rem;
+    }
+
+    .winners-week-tab {
+        padding: 10rem 16rem;
+        font-weight: 300;
+        font-size: 18rem;
     }
 
     .winners-prizes-tab {
-        padding: 14rem 26rem;
+        padding: 12rem 28rem;
+        font-weight: 300;
+        font-size: 18rem;
     }
 
-    .winners-prizes-tabs .winners-prizes-tab:not(:last-child) {
-        margin-right: 8rem;
+    .winners-table .table-head {
+        border-radius: 0;
     }
 
-    .winners-table .table-body {
-        max-height: 210rem;
+    .winners-table .table-row {
+        width: 100%;
+    }
+
+    .winners-table .table-body .table-row:nth-child(even) {
+        border-radius: 0;
     }
 
     .table-col {
@@ -2785,48 +2722,128 @@ body {
     }
 
     .winners-table .table-col {
-        width: 110rem;
-        min-width: 110rem;
+        width: auto;
+        min-width: 80rem;
+        padding-left: 12rem;
+        padding-right: 12rem;
     }
 
-    .section-mainprize {
-        height: auto;
-        padding-top: 245rem;
-        padding-bottom: 0;
-        background-position: center 0;
-        background-size: 480rem;
-        background-color: #fff;
+    .winners-table .table-col:nth-child(3) {
+        min-width: 115rem;
     }
 
-    .mainprize-block {
-        padding: 16rem 0;
-        background: transparent;
-        -webkit-backdrop-filter: none;
-        backdrop-filter: none;
+    .winners-table .table-col:last-child {
+        width: 50%;
+    }
+
+    .winners-table .table-body .table-col {
+        padding: 20rem 12rem;
+    }
+
+    .superprize-winner .table-col {
+        font-size: 18rem;
     }
 
     .section-prizes .page-title {
-        margin-bottom: 0;
+        margin-bottom: 20rem;
+    }
+
+    .prize-garant {
+        flex-direction: column;
+    }
+
+    .prize-garant-img {
+        margin-bottom: 48rem;
+        order: -1;
+    }
+
+    .prize-garant-text:first-child,
+    .prize-garant-text {
+        max-width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .prize-garant-text br {
+        display: none;
+    }
+
+    .prize-garant-text {
+        font-size: 30rem;
+    }
+
+    .prizes-title {
+        margin: 60rem 0 20rem;
     }
     
     .prizes {
         margin-top: 0;
     }
 
-    .prize {
+    .prize,
+    .prize:nth-child(1),
+    .prize:nth-child(2) {
         width: 100%;
+        margin-bottom: 20rem;
     }
 
-    .prize:nth-child(3) {
-        margin-bottom: 16rem;
+    .prize:last-child {
+        margin-bottom: 0;
     }
 
-    .game-mainpage-block {
-        padding-bottom: 300rem;
+    .prize-img {
+        margin-bottom: 0;
     }
 
-    .game-mainpage-block::before {
-        height: 296rem;
+    .prize-total {
+        top: 0;
+        right: -20rem;
+    }
+
+    .prize-main {
+        flex-direction: column;
+        margin-top: 100rem;
+    }
+
+    .prize-main-img {
+        margin-bottom: 48rem;
+        order: -1;
+    }
+
+    .prize-main-img .prize-total {
+        top: -58rem;
+        right: -22rem;
+    }
+
+    .prize-main-text:first-child,
+    .prize-main-text {
+        max-width: 100%;
+        margin: 0;
+        font-size: 44rem;
+        text-align: center;
+    }
+
+    .prize-main-text br {
+        display: none;
+    }
+
+    .section-game-mainpage {
+        min-height: 718rem;
+        background: url(../img/bg-game-main-mob.svg) center/cover no-repeat;
+        border-radius: 30rem;
+    }
+
+    .game-mainpage-info {
+        padding: 0;
+    }
+
+    .game-mainpage-text {
+        margin: 24rem 0;
+        font-size: 24rem;
+    }
+
+    .section-steps {
+        border-radius: 30rem 30rem 0 0;
     }
 
     .steps {
@@ -2834,16 +2851,21 @@ body {
     }
 
     .step {
-        width: 100%;
+        width: 250rem;
+        margin: 0 auto 36rem;
     }
 
-    .step:nth-child(3) {
-        margin-bottom: 16rem;
+    .step:last-child {
+        margin-bottom: 0;
     }
 
     .section-main {
         height: 810rem;
         padding-top: 100rem;
+    }
+
+    .section-mainpage {
+        border-radius: 0 0 30rem 30rem;
     }
 
     .section-main .gift-decor {
@@ -2970,27 +2992,25 @@ body {
         height: 730rem;
     }
 
+    .section-mainpage {
+        height: 656rem;
+    }
+
     .section-main .gift-decor {
         width: 375rem;
         height: 270rem;
     }
 
-    .section-mainprize {
-        padding-top: 190rem;
-        background-size: 375rem;
+    .section-mainpage .gift-decor {
+        top: 370rem;
     }
 
-    .section-prizes .page-title {
-        text-align: left;
+    .section-mainpage .stub-title {
+        font-size: 72rem;
     }
 
-    .game-mainpage-block {
-        padding-top: 48rem;
-        padding-bottom: 272rem;
-    }
-
-    .game-mainpage-block::before {
-        height: 260rem;
+    .section-game-mainpage {
+        height: 640rem;
     }
 
     .header-links {
