@@ -141,15 +141,6 @@ $(document).ready(function() {
     });
 
     // табы
-    $('.winners-week-tab-trigger').click(function(e){
-        e.preventDefault();
-        $('.winners-week-tab-trigger').removeClass('active');
-        var tab = $(this).data('tab');
-        $('.winners-week-tab').removeClass('active');
-        $(this).addClass('active');
-        $('.winners-week-tab-item').removeClass('active');
-        $('.winners-week-tab-item[data-tab="'+ tab +'"]').addClass('active');
-    });
     $('.winners-prizes-tab-trigger').click(function(e){
         e.preventDefault();
         $('.winners-prizes-tab-trigger').removeClass('active');
@@ -158,11 +149,15 @@ $(document).ready(function() {
         $(this).addClass('active');
         $('.winners-prizes-tab-item').removeClass('active');
         $('.winners-prizes-tab-item[data-tab="'+ tab +'"]').addClass('active');
-
-        $('.winners-week-tabs').removeClass('active');
-        $('.winners-week-tabs[data-tab="'+ tab +'"]').addClass('active');
-        $('.winners-week-tab, .winners-week-tab-item').removeClass('active');
-        $('.winners-week-tabs[data-tab="'+ tab +'"] .winners-week-tab:first, .winners-prizes-tab-item[data-tab="'+ tab +'"] .winners-week-tab-item:first').addClass('active');
+    });
+    $('.winners-week-tab-trigger').click(function(e){
+        e.preventDefault();
+        $('.winners-week-tab-trigger').removeClass('active');
+        var subtab = $(this).data('subtab');
+        $('.winners-week-tab').removeClass('active');
+        $(this).addClass('active');
+        $('.winners-week-tab-item').removeClass('active');
+        $('.winners-week-tab-item[data-subtab="'+ subtab +'"]').addClass('active');
     });
 
     // select2
