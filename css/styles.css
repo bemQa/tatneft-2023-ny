@@ -2642,6 +2642,10 @@ body {
         font-size: 16rem;
     }
 
+    .footer {
+        padding-bottom: 74rem;
+    }
+
     .footer-menu {
         flex-wrap: wrap;
         align-items: flex-end;
