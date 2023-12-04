@@ -258,9 +258,9 @@ body {
     left: 0;
     right: 0;
     margin: auto;
-    width: 6rem;
+    width: 2rem;
     height: 100%;
-    background: #F4F4F4;
+    background: #B0C77B;
     border-radius: 10rem;
     z-index: 0;
 }
@@ -1068,7 +1068,7 @@ body {
 }
 
 .header + .section:not(.section-main) {
-    padding-top: 130rem;
+    padding-top: 170rem;
 }
 
 .page-title {
@@ -1849,366 +1849,399 @@ body {
     display: inline-flex;
 }
 
-.lk-page {
-    background: #fff;
+.grecaptcha-badge { 
+    visibility: hidden;
+}
+
+.section-lk {
+    position: relative;
+    padding-top: 170rem;
+    padding-bottom: 40rem;
+    background: radial-gradient(113.47% 78.13% at 72.47% 62.13%, #C7FBBC 0%, #90C63E 70%);
+    border-radius: 0 0 50rem 50rem;
+    overflow: hidden;
+}
+
+.section-lk .page-title {
+    text-align: left;
+}
+
+.lk-row {
+    display: flex;
+    margin-left: 112rem;
+}
+
+.lk-col {
+    position: relative;
+}
+
+.lk-col:first-child {
+    max-width: 520rem;
+    width: 100%;
+    margin-right: 56rem;
+}
+
+.lk-col:last-child {
+    width: calc(100% - 576rem);
+}
+
+.profile-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.profile-name {
+    max-width: 220rem;
+    width: 100%;
+    margin-right: 30rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    font-size: 24rem;
+    line-height: 1.1;
+    color: #392A25;
+}
+
+.points {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50rem;
+    padding: 5rem 16rem;
+    margin-right: 30rem;
+    background: #679400;
+    border-radius: 25rem;
+    font-weight: 400;
+    font-size: 44rem;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.profile-socs {
+    margin-bottom: 22rem;
+}
+
+.profile-phone {
+    position: relative;
+    padding-left: 20rem;
+    margin-bottom: 12rem;
+    font-size: 18rem;
+    line-height: 1;
+    color: #fff;
+}
+
+.profile-phone::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 15rem;
+    height: 12rem;
+    background: url(../img/icon-phone.svg) center/contain no-repeat;
 }
 
 .logout-link {
     position: relative;
-    display: block;
-    margin-left: 16rem;
+    padding-left: 20rem;
+    margin-bottom: 12rem;
     font-size: 18rem;
-    line-height: 1.3;
-    color: #E4002B;
+    line-height: 1;
+    color: #606060;
+    opacity: 0.5;
 }
 
 .logout-link::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -8rem;
-    width: 1rem;
-    height: 100%;
-    background: #AAA;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 9rem;
+    height: 11rem;
+    background: url(../img/icon-quit.svg) center/contain no-repeat;
 }
 
 .logout-link:hover {
-    color: #84BD00;
+    opacity: 1;
 }
 
-.lk-page .game-mainpage-block {
-    background: #84BD00;
+.lk-table-wrapper {
+    width: 100%;
+    padding: 30rem 24rem 38rem 36rem;
+    background: #F4F4F4;
+    border-radius: 32rem;
 }
 
-.lk-page .game-mainpage-info {
-    color: #fff;
-}
-
-.my-bonuses-block {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 48rem;
-    color: #000;
-}
-
-.my-bonuses-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.my-bonuses-text {
-    margin-bottom: 8rem;
+.table-title {
+    margin-bottom: 30rem;
     font-weight: 400;
     font-size: 32rem;
     line-height: 1;
+    color: #392A25;
 }
 
-.my-bonuses-team {
-    font-weight: 400;
-    font-size: 18rem;
-    line-height: 1.3;
+.transaction-table .table-body {
+    max-height: 200rem;
 }
 
-.bonuses-all-stat {
-    display: flex;
-    flex-direction: column;
-    max-width: 710rem;
-    width: 100%;
-}
-
-.bonuses-progress-bar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 20rem;
-    background: #F4F4F4;
-    border-radius: 16rem;
-    overflow: hidden;
-}
-
-.bonuses-progress-green-team {
-    height: 20rem;
-    background: #84BD00;
-    transition: all .3s ease-in;
-}
-
-.bonuses-progress-red-team {
-    height: 20rem;
-    background: #E4002B;
-    transition: all .3s ease-in;
-}
-
-.bonuses-teams {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 16rem;
-    font-weight: 400;
-    font-size: 18rem;
-    line-height: 1.3;
-    color: #000;
-}
-
-.bonuses-green-team,
-.bonuses-red-team {
-    position: relative;
-    padding-left: 32rem;
-}
-
-.bonuses-green-team::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20rem;
-    height: 20rem;
-    background: #84BD00;
-    border-radius: 20rem;
-}
-
-.bonuses-red-team::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20rem;
-    height: 20rem;
-    background: #E4002B;
-    border-radius: 20rem;
-}
-
-.lk-page .footer {
-    background: #F4F4F4;
-}
-
-.lk-title {
-    margin-bottom: 8rem;
-    font-weight: 400;
-    font-size: 32rem;
-    line-height: 1;
-    color: #000;
-}
-
-.lk-subtitle {
-    margin-bottom: 24rem;
-    font-size: 18rem;
-    line-height: 1.3;
-    color: #000;
-}
-
-.transaction-table .table-col {
-    width: 180rem;
-    min-width: 180rem;
+.transaction-table .table-col:not(:last-child) {
+    padding-left: 0;
+    padding-right: 30rem;
 }
 
 .transaction-table .table-col:last-child {
-    width: 200rem;
-    min-width: 200rem;
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.grecaptcha-badge { 
-    visibility: hidden;
-}
-
-/* кубики */
-.dices {
-    position: relative;
-    width: 178rem;
-    height: 125rem;
-    margin: 8rem auto 48rem;
-}
-
-.dice {
-    position: absolute;
+.transaction-table .table-col:nth-child(1) {
     width: 112rem;
-    height: 126rem;
 }
 
-.dice1 {
-    top: 15rem;
+.transaction-table .table-col:nth-child(2) {
+    width: 88rem;
+}
+
+.transaction-table .table-col:nth-child(3) {
+    width: 116rem;
+}
+
+.transaction-table .table-col:nth-child(4) {
+    width: 150rem;
+}
+
+.transaction-table .simplebar-track.simplebar-vertical {
+    right: -6rem;
+}
+
+.lk-information {
+    position: relative;
+    max-width: 426rem;
+    width: 100%;
+    padding: 20rem 30rem;
+    background: #F4F4F4;
+    border-radius: 32rem;
+    font-weight: 400;
+    font-size: 24rem;
+    line-height: 1.1;
+    color: #000;
+}
+
+.tree {
+    position: absolute;
+    top: 50rem;
     left: 0;
+    right: -380rem;
+    width: 422rem;
+    height: 514rem;
+    margin: auto;
+    background: url(../img/lk-tree.svg) center/contain no-repeat;
 }
 
-.dice1::before {
+.lvl {
+    position: absolute;
+    pointer-events: none;
+}
+
+.lvl1 {
+    left: 10rem;
+    bottom: 40rem;
+    width: 396rem;
+    height: 96rem;
+    background: url(../img/garland01.svg) center/contain no-repeat;
+}
+
+.lvl1-active .lvl1,
+.lvl2-active .lvl1,
+.lvl3-active .lvl1,
+.lvl4-active .lvl1,
+.lvl5-active .lvl1 {
+    left: 7rem;
+    bottom: 25rem;
+    width: 403rem;
+    height: 134rem;
+    background: url(../img/garland01_active.svg) center/contain no-repeat;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.lvl2 {
+    left: 102rem;
+    bottom: 162rem;
+    width: 262rem;
+    height: 75rem;
+    background: url(../img/garland02.svg) center/contain no-repeat;
+}
+
+.lvl2-active .lvl2,
+.lvl3-active .lvl2,
+.lvl4-active .lvl2,
+.lvl5-active .lvl2 {
+    left: 83rem;
+    bottom: 147rem;
+    width: 300rem;
+    height: 112rem;
+    background: url(../img/garland02_active.svg) center/contain no-repeat;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.lvl3 {
+    top: 164rem;
+    left: 112rem;
+    width: 207rem;
+    height: 59rem;
+    background: url(../img/garland03.svg) center/contain no-repeat;
+}
+
+.lvl3-active .lvl3,
+.lvl4-active .lvl3,
+.lvl5-active .lvl3 {
+    top: 141rem;
+    left: 93rem;
+    width: 245rem;
+    height: 96rem;
+    background: url(../img/garland03_active.svg) center/contain no-repeat;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.lvl4 {
+    top: 84rem;
+    left: 163rem;
+    width: 122rem;
+    height: 52rem;
+    background: url(../img/garland04.svg) center/contain no-repeat;
+}
+
+.lvl4-active .lvl4,
+.lvl5-active .lvl4 {
+    top: 62rem;
+    left: 145rem;
+    width: 159rem;
+    height: 88rem;
+    background: url(../img/garland04_active.svg) center/contain no-repeat;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.lvl5 {
+    top: -54rem;
+    left: 170rem;
+    right: 148rem;
+    width: 103rem;
+    height: 103rem;
+    background: url(../img/star.png) center/contain no-repeat;
+}
+
+.lvl5-active .lvl5 {
+    top: -54rem;
+    left: 151rem;
+    right: 148rem;
+    width: 141rem;
+    height: 118rem;
+    background: url(../img/star_active.png) center/contain no-repeat;
+}
+
+.lvl-tooltip {
+    position: absolute;
+    left: -280rem;
+    bottom: 0;
+    width: 280rem;
+    height: 184rem;
+    padding: 20rem 30rem;
+    background: #fff;
+    border-radius: 32rem;
+    transition: all .3s ease;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.lvl-tooltip::after {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    right: -20rem;
     bottom: 0;
     margin: auto;
-    width: 100%;
-    height: 100%;
-    background: url(../img/dice1-red.png) center/contain no-repeat;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 20px solid #fff;
+    border-bottom: 10px solid transparent;
 }
 
-.dice1::after {
-    content: '';
+.lvl-tooltip.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lvl-tooltip-text {
+    margin-bottom: 10rem;
+    font-weight: 400;
+    font-size: 14rem;
+    line-height: 1.3;
+    letter-spacing: 0.14rem;
+    text-align: center;
+    color: #000;
+}
+
+.lvl-tooltip-prizes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lvl-tooltip-prize {
+    width: 100rem;
+}
+
+.lvl-tooltip-prize-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90rem;
+    height: 70rem;
+    margin: 0 auto 10rem;
+}
+
+.lvl-tooltip-prize-name {
+    font-weight: 400;
+    font-size: 14rem;
+    line-height: 1.3;
+    letter-spacing: 0.14rem;
+    text-align: center;
+    color: #000;
+}
+
+.countdown-game-wrapper {
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    background: url(../img/dice1-green.png) center/contain no-repeat;
+    right: 20rem;
+    width: 326rem;
+    height: 60rem;
+    padding: 20rem 30rem;
+    background: #F4F4F4;
+    border-radius: 32rem;
 }
 
-.dice2 {
-    top: 0;
-    right: 0;
+.countdown-game-text {
+    font-weight: 400;
+    font-size: 24rem;
+    line-height: 1;
+    color: #000;
 }
 
-.dice2::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    background: url(../img/dice2-red.png) center/contain no-repeat;
-}
-
-.dice2::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    background: url(../img/dice2-green.png) center/contain no-repeat;
-}
-
-.dices.green-team .dice1::after {
-    animation: dice1RollGreen 5s .5s linear both;
-}
-
-.dices.green-team .dice2::after {
-    animation: dice2RollGreen 5s .5s linear both;
-}
-
-.dices.red-team .dice1::after {
-    animation: dice1RollRed 5s .5s linear both;
-}
-
-.dices.red-team .dice2::after {
-    animation: dice2RollRed 5s .5s linear both;
-}
-
-.btn-team-modal {
-    margin-top: 48rem;
-}
-
-@keyframes dice1RollGreen {
-    0% {
-        opacity: 1;
-    }
-
-    20% {
-        opacity: 0;
-    }
-
-    40% {
-        opacity: 0;
-    }
-
-    60% {
-        opacity: 0;
-    }
-
-    80% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes dice1RollRed {
-    0% {
-        opacity: 1;
-    }
-
-    20% {
-        opacity: 0;
-    }
-
-    40% {
-        opacity: 0;
-    }
-
-    60% {
-        opacity: 0;
-    }
-
-    80% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes dice2RollGreen {
-    0% {
-        opacity: 1;
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    40% {
-        opacity: 0;
-    }
-
-    60% {
-        opacity: 1;
-    }
-
-    80% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes dice2RollRed {
-    0% {
-        opacity: 1;
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    40% {
-        opacity: 0;
-    }
-
-    60% {
-        opacity: 1;
-    }
-
-    80% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
+.countdown-game {
+    color: #E4002B;
 }
 
 /* game */
@@ -2553,42 +2586,6 @@ body {
         margin-bottom: 40rem;
     }
 
-    .lk-page .header .logo {
-        margin-right: 108rem;
-    }
-
-    .my-bonuses-block {
-        flex-direction: column;
-        margin-bottom: 40rem;
-    }
-
-    .my-bonuses-info {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        order: 1;
-    }
-
-    .my-bonuses-text {
-        margin-bottom: 0;
-    }
-
-    .bonuses-all-stat {
-        max-width: 100%;
-        margin-bottom: 20rem;
-    }
-
-    .lk-page .game-mainpage-info .page-title {
-        max-width: 600rem;
-        font-size: 60rem;
-        letter-spacing: 0.6rem;
-    }
-
-    .lk-page .game-mainpage-text {
-        font-size: 24rem;
-        letter-spacing: 0.24rem;
-    }
-
     .modal#form-authorization {
         width: 100%;
         height: 100%;
@@ -2887,109 +2884,6 @@ body {
     .stub-title br {
         display: block;
     }
-
-    .lk-page .header {
-        height: 115rem;
-    }
-
-    .lk-page .header-container {
-        flex-wrap: wrap;
-        align-items: flex-end;
-    }
-
-    .lk-page .header .logo {
-        margin-right: 0;
-    }
-
-    .header-menu {
-        order: 1;
-        max-width: 100%;
-        margin: 16rem auto 0;
-    }
-
-    .header-menu-link {
-        width: 100%;
-        font-size: 18rem;
-    }
-
-    .header-menu-link::before {
-        position: relative;
-        top: auto;
-        left: auto;
-        bottom: auto;
-        margin: 0 8rem 0 -30rem;
-        width: 20rem;
-        height: 20rem;
-    }
-
-    .profile-name,
-    .logout-link {
-        font-size: 16rem;
-    }
-
-    .my-bonuses-text {
-        font-size: 24rem;
-    }
-
-    .my-bonuses-team {
-        font-size: 16rem;
-    }
-
-    .bonuses-progress-bar,
-    .bonuses-progress-green-team {
-        height: 12rem;
-    }
-
-    .bonuses-teams {
-        font-size: 16rem;
-    }
-
-    .bonuses-green-team, 
-    .bonuses-red-team {
-        padding-left: 16rem;
-    }
-
-    .bonuses-green-team::before,
-    .bonuses-red-team::before {
-        bottom: 0;
-        margin: auto;
-        width: 12rem;
-        height: 12rem;
-    }
-
-    .lk-page .game-mainpage-block {
-        padding-top: 32rem;
-        padding-bottom: 254rem;
-    }
-
-    .lk-page .game-mainpage-block::before {
-        height: 232rem;
-    }
-
-    .lk-page .game-mainpage-info .page-title {
-        max-width: 340rem;
-        font-size: 24rem;
-        letter-spacing: 0;
-    }
-
-    .lk-page .game-mainpage-text {
-        font-size: 18rem;
-        letter-spacing: 0;
-    }
-
-    .lk-subtitle {
-        margin-bottom: 8rem;
-    }
-
-    .transaction-table .table-col {
-        width: 100rem;
-        min-width: 100rem;
-    }
-
-    .transaction-table .table-col:last-child {
-        width: 130rem;
-        min-width: 130rem;
-    }
 }
 
 @media (max-width: 375px) {
@@ -3020,42 +2914,6 @@ body {
 
     .section-game-mainpage {
         height: 640rem;
-    }
-
-    .header-links {
-        max-width: 230rem;
-    }
-
-    .profile-name {
-        max-width: 182rem;
-    }
-
-    .section-lk-transactions .container {
-        padding: 0;
-    }
-
-    .lk-title {
-        padding: 0 20rem;
-    }
-
-    .transaction-table .table-col {
-        width: 86rem;
-        min-width: 86rem;
-        padding: 12rem 0;
-    }
-
-    .transaction-table .table-col:first-child {
-        padding-left: 8rem;
-    }
-
-    .transaction-table .table-col:last-child {
-        width: 116rem;
-        min-width: 116rem;
-        padding-right: 8rem;
-    }
-
-    .bonuses-teams {
-        font-size: 14rem;
     }
 }
 /*end mobile styles*/

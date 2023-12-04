@@ -183,4 +183,30 @@ $(document).ready(function() {
             dropdownParent: $('.select')
         });
     }
+
+    // lk tooltip
+    $('body').on('click', '.lvl', function() {
+        $this = $(this);
+        $('.lvl-tooltip').removeClass('active');
+        $this.find('.lvl-tooltip').addClass('active');
+
+        $('body').on('click', function (e) {
+            let div = $('.lvl');
+
+            if (!div.is(e.target) && div.has(e.target).length === 0) {
+                $('.lvl-tooltip').removeClass('active');
+            }
+        });
+    })
+
+    // кд игры
+    let end_date = $('.end-countdown-game').val();
+    $('.countdown-game').countdown(end_date)
+    .on('update.countdown', function (event) {
+        $(this).html(event.strftime(`%H:%M:%S`));
+    })
+    .on('finish.countdown', function(event) {
+        $('.countdown-game-wrapper').hide();
+        $('.btn-open-game').removeClass('disabled');
+    });
 });
