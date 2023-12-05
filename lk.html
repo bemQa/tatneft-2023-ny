@@ -35,7 +35,7 @@
 					</div>
 				</div>
 				<div class="header-buttons">
-					<a href="" class="btn">Личный кабинет</a>
+					<a href="" class="btn"><span>Личный кабинет</span></a>
 				</div>
 			</div>
 		</header>
@@ -49,7 +49,7 @@
 								Христарождественский <br>
 								Константин Владимирович
 							</div>
-							<div class="points">440 б</div>
+							<div class="points">9999 б</div>
 							<div class="profile-socs">
 								<div class="profile-phone">8 (9ХХ) ХХХ-ХХ-ХХ</div>
 								<a href="" class="logout-link">Выйти</a>
@@ -60,9 +60,15 @@
 							<div class="table transaction-table">
 								<div class="table-head">
 									<div class="table-row">
-										<div class="table-col">№ транзакции</div>
+										<div class="table-col">
+											<span class="desktop-laptop-visible">№ транзакции</span>
+											<span class="mobile-visible">Транзакция</span>
+										</div>
 										<div class="table-col">Дата</div>
-										<div class="table-col">Сумма покупок</div>
+										<div class="table-col">
+											<span class="desktop-laptop-visible">Сумма покупок</span>
+											<span class="mobile-visible">Сумма</span>
+										</div>
 										<div class="table-col">Приз</div>
 									</div>
 								</div>
@@ -121,14 +127,15 @@
 					</div>
 					<div class="lk-col">
 						<div class="lk-information">
-							<span class="red-text">Покупайте</span> от 30 л топлива или товары* от&nbsp;250 руб. с&nbsp;предъявлением карты «Клуб Чемпионов», <span class="red-text">зажигайте</span> гирлянды на ёлке и&nbsp;<span class="red-text">выигрывайте</span> один из тысяч ценных призов
+							<span class="red-text">Покупайте</span> от 30 л топлива или товары* от&nbsp;250&nbsp;руб. с&nbsp;предъявлением карты «Клуб Чемпионов», <span class="red-text">зажигайте</span> гирлянды на ёлке и&nbsp;<span class="red-text">выигрывайте</span> один из тысяч ценных призов
 						</div>
 						<!-- чтобы уровни гирлянды загорались необходимо задать класс соответствующий текущему уровню профиля, например: lvl5-active зажигает всю ёлку вместе со звездой, а lvl1-active зажжёт только первый уровень гирлянды -->
-						<div class="tree lvl1-active">
+						<div class="tree lvl4-active">
 							<div class="lvl lvl5"></div>
 							<div class="lvl lvl4">
 								<div class="lvl-tooltip">
-									<div class="lvl-tooltip-text">Вы участвуете в розыгрыше призов 1 уровня</div>
+									<a href="#!" class="close-lvl-tooltop"></a>
+									<div class="lvl-tooltip-text">Вы участвуете в розыгрыше призов 4 уровня</div>
 									<div class="lvl-tooltip-prizes">
 										<div class="lvl-tooltip-prize">
 											<div class="lvl-tooltip-prize-img">
@@ -147,7 +154,8 @@
 							</div>
 							<div class="lvl lvl3">
 								<div class="lvl-tooltip">
-									<div class="lvl-tooltip-text">Вы участвуете в розыгрыше призов 1 уровня</div>
+									<a href="#!" class="close-lvl-tooltop"></a>
+									<div class="lvl-tooltip-text">Вы участвуете в розыгрыше призов 3 уровня</div>
 									<div class="lvl-tooltip-prizes">
 										<div class="lvl-tooltip-prize">
 											<div class="lvl-tooltip-prize-img">
@@ -166,7 +174,8 @@
 							</div>
 							<div class="lvl lvl2">
 								<div class="lvl-tooltip">
-									<div class="lvl-tooltip-text">Вы участвуете в розыгрыше призов 1 уровня</div>
+									<a href="#!" class="close-lvl-tooltop"></a>
+									<div class="lvl-tooltip-text">Вы участвуете в розыгрыше призов 2 уровня</div>
 									<div class="lvl-tooltip-prizes">
 										<div class="lvl-tooltip-prize">
 											<div class="lvl-tooltip-prize-img">
@@ -185,6 +194,7 @@
 							</div>
 							<div class="lvl lvl1">
 								<div class="lvl-tooltip">
+									<a href="#!" class="close-lvl-tooltop"></a>
 									<div class="lvl-tooltip-text">Вы участвуете в розыгрыше призов 1 уровня</div>
 									<div class="lvl-tooltip-prizes">
 										<div class="lvl-tooltip-prize">
@@ -207,15 +217,15 @@
 				</div>
 			</div>
 		</section>
-		<section id="game" class="section section-game-mainpage">
+		<section id="game" class="section section-game-mainpage section-game-mainpage-lk">
 			<div class="container">
 				<div class="game-mainpage-info">
 					<div class="game-mainpage-title red-text">Сыграйте в игру и&nbsp;получите дополнительные бонусы</div>
 					<div class="game-mainpage-text">Проезжайте как можно дальше, собирая подарки и&nbsp;товары с АЗС, и получайте дополнительные бонусы</div>
 					<!-- если игра в кд то заблокировать кнопку классом disabled -->
-					<a href="" class="btn btn-big btn-open-game disabled">Играть</a>
+					<a href="" class="btn btn-big btn-open-game disabled"><span>Играть</span></a>
 					<!-- если игра в кд то задать дату окончания кд -->
-					<input type="hidden" class="end-countdown-game" value="2023/12/04 23:59:59">
+					<input type="hidden" class="end-countdown-game" value="2023/12/05 23:59:59">
 					<div class="countdown-game-wrapper">
 						<div class="countdown-game-text">До следующей попытки: <span class="countdown-game"></span></div>
 					</div>
@@ -231,7 +241,10 @@
 					<a href="" class="footer-link" target="_blank">Пользовательское соглашение</a>
 				</div>
 				<a href="" class="logo"></a>
-				<a href="tel:8 800 775 68 48" class="footer-link footer-phone">Горячая линия 8 800 775 68 48</a>
+				<div class="footer-socs">
+					<a href="tel:8 800 775 68 48" class="footer-link footer-phone">Горячая линия 8 800 775 68 48</a>
+					<span class="footer-link-text"><span>Почта для обратной связи:</span> <a href="mailto:support@promo-tatneft.ru" class="footer-link footer-mail">support@promo-tatneft.ru</a></span>
+				</div>
 			</div>
 			<div class="footer-copyright-block">
 				<div class="copyright">Общий срок проведения акции с 08.12.2023 г. по 23.02.2024 г. Срок совершения покупок для участия в акции c 08.12.2023 г. по 02.02.2024 г.  Добавление чеков в личный кабинет участников на сайте акции проводится с 08.12.2023 г. по 23.02.2024 г. Полная информация об организации Акции, правилах проведения, количестве призов, сроках, порядке и месте их получения на www.promo-tatneft.ru. Гарантированный приз в 25 бонусов на карту программы лояльности «Клуб Чемпионов» получают первые 30 000 участников. Количество призов  ограничено. При совершении покупок предъявляйте карту «Клуб чемпионов»  (пластиковую либо виртуальную) на кассах АЗС «Татнефть».</div>
@@ -246,7 +259,7 @@
 		<a href="#" class="modal_close" data-fancybox-close></a>
 		<div class="modal_title">Успешно!</div>
 		<div class="modal_text">Ваши данные успешно отправлены! В ближайшее время с вами свяжется менеджер и ответит на ваши вопросы.</div>
-		<button class="btn btn-big btn-team-modal" data-fancybox-close>Закрыть</button>
+		<button class="btn btn-big btn-team-modal" data-fancybox-close><span>Закрыть</span></button>
 	</div>
 </div>
 
@@ -255,7 +268,7 @@
 		<a href="#" class="modal_close" data-fancybox-close></a>
 		<div class="modal_title">Произошла ошибка</div>
 		<div class="modal_text">Не удалось отправить данные. Попробуйте позже или перезагрузите страницу.</div>
-		<button class="btn btn-big btn-team-modal" data-fancybox-close>Закрыть</button>
+		<button class="btn btn-big btn-team-modal" data-fancybox-close><span>Закрыть</span></button>
 	</div>
 </div>
 

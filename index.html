@@ -35,9 +35,9 @@
 					</div>
 				</div>
 				<div class="header-buttons">
-					<a href="" class="btn">Авторизоваться</a>
+					<a href="" class="btn"><span>Авторизоваться</span></a>
 					<!-- в авторизованном состоянии -->
-					<!-- <a href="" class="btn">Личный кабинет</a> -->
+					<!-- <a href="" class="btn"><span>Личный кабинет</span></a> -->
 				</div>
 			</div>
 		</header>
@@ -108,10 +108,10 @@
 				<div class="stub-title">Миллион <br>на мечту</div>
 				<div class="stub-text main-text">Включайте огоньки на ёлке <br>и выигрывайте ценные призы</div>
 				<div class="main-btn">
-					<a href="" class="btn btn-white btn-big">Авторизоваться</a>
+					<a href="" class="btn btn-white btn-big"><span>Авторизоваться</span></a>
 				</div>
 				<!-- в авторизованном состоянии -->
-				<!-- <a href="" class="btn btn-white btn-big">Личный кабинет</a> -->
+				<!-- <a href="" class="btn btn-white btn-big"><span>Личный кабинет</span></a> -->
 			</div>
 		</section>
 		<section id="steps" class="section section-steps">
@@ -121,9 +121,9 @@
 					<div class="step">
 						<div class="step-title">1. Зарегистрируйтесь</div>
 						<div class="step-text">на сайте и все ваши акционные чеки <br>будут загружаться автоматически</div>
-						<a href="" class="btn">Авторизоваться</a>
+						<a href="" class="btn"><span>Авторизоваться</span></a>
 						<!-- в авторизованном состоянии -->
-						<!-- <a href="" class="btn">Личный кабинет</a> -->
+						<!-- <a href="" class="btn"><span>Личный кабинет</span></a> -->
 					</div>
 					<div class="step">
 						<div class="step-title">2. Купите</div>
@@ -244,7 +244,7 @@
 				<div class="game-mainpage-info">
 					<div class="game-mainpage-title red-text">Сыграйте в игру и&nbsp;получите дополнительные бонусы</div>
 					<div class="game-mainpage-text">Проезжайте как можно дальше, собирая подарки и&nbsp;товары с АЗС, и получайте дополнительные бонусы</div>
-					<a href="" class="btn btn-big">Играть</a>
+					<a href="" class="btn btn-big"><span>Играть</span></a>
 				</div>
 			</div>
 		</section>
@@ -751,7 +751,7 @@
 								<label for="feedback-ch">Нажимая кнопку «Отправить», я подтверждаю свое согласие на обработку своих персональных данных в соответствии с Политикой конфиденциальности</label>
 							</div>
 							<div class="buttons">
-								<button class="btn btn-big">Отправить</button>
+								<button class="btn btn-big"><span>Отправить</span></button>
 							</div>
 						</form>
 					</div>
@@ -767,7 +767,10 @@
 					<a href="" class="footer-link" target="_blank">Пользовательское соглашение</a>
 				</div>
 				<a href="" class="logo"></a>
-				<a href="tel:8 800 775 68 48" class="footer-link footer-phone">Горячая линия 8 800 775 68 48</a>
+				<div class="footer-socs">
+					<a href="tel:8 800 775 68 48" class="footer-link footer-phone">Горячая линия 8 800 775 68 48</a>
+					<span class="footer-link-text"><span>Почта для обратной связи:</span> <a href="mailto:support@promo-tatneft.ru" class="footer-link footer-mail">support@promo-tatneft.ru</a></span>
+				</div>
 			</div>
 			<div class="footer-copyright-block">
 				<div class="copyright">Общий срок проведения акции с 08.12.2023 г. по 23.02.2024 г. Срок совершения покупок для участия в акции c 08.12.2023 г. по 02.02.2024 г.  Добавление чеков в личный кабинет участников на сайте акции проводится с 08.12.2023 г. по 23.02.2024 г. Полная информация об организации Акции, правилах проведения, количестве призов, сроках, порядке и месте их получения на www.promo-tatneft.ru. Гарантированный приз в 25 бонусов на карту программы лояльности «Клуб Чемпионов» получают первые 30 000 участников. Количество призов  ограничено. При совершении покупок предъявляйте карту «Клуб чемпионов»  (пластиковую либо виртуальную) на кассах АЗС «Татнефть».</div>
@@ -777,54 +780,12 @@
 </div>
 
 <!-- модалки -->
-<div class="modal" id="feedback_modal">
-	<div class="modal_content">
-		<a href="#" class="modal_close" data-fancybox-close></a>
-		<div class="modal_title">Задать вопрос</div>
-		<div class="modal_text">Заполните форму ниже, и мы свяжемся с вами и ответим на все интересующие вопросы.</div>
-		<form class="form">
-			<div class="modal_error">Текст ошибки</div>
-			<div class="ip_cell">
-                <input type="text" class="input_text" name="name" placeholder="Ваше имя *" required="">
-            </div>
-            <div class="ip_cell">
-                <input type="text" class="input_text" name="email" placeholder="Почта *" required="">
-            </div>
-            <div class="ip_cell">
-                <input type="text" class="input_text phone-mask" name="phone" placeholder="+7 (000) 000 00 00 *" required="">
-            </div>
-			<div class="ip_cell">
-				<div class="select feedback-select">
-					<select name="theme" data-placeholder="Тип вопроса *" required>
-						<option value=""></option>
-						<option value="1">Вопрос по работе сайта</option>
-						<option value="2">Вопрос по правилам акции</option>
-						<option value="3">Вопрос по продукции</option>
-						<option value="4">Вопрос по призам</option>
-						<option value="5">Другое</option>
-					</select>
-				</div>
-			</div>
-            <div class="ip_cell">
-                <textarea class="input_text" name="text" placeholder="Ваш вопрос"></textarea>
-            </div>
-            <div class="ip_cell">
-				<input type="checkbox" id="feedback-ch" class="ch" name="reg-ch" required="">
-				<label for="feedback-ch">Нажимая кнопку «Отправить», я подтверждаю свое согласие на обработку своих персональных данных в соответствии с Политикой конфиденциальности</label>
-			</div>
-			<div class="buttons">
-            	<button class="btn btn-big">Отправить</button>
-            </div>
-		</form>
-	</div>
-</div>
-
 <div class="modal" id="success_modal">
 	<div class="modal_content">
 		<a href="#" class="modal_close" data-fancybox-close></a>
 		<div class="modal_title">Успешно!</div>
 		<div class="modal_text">Ваши данные успешно отправлены! В ближайшее время с вами свяжется менеджер и ответит на ваши вопросы.</div>
-		<button class="btn btn-big btn-team-modal" data-fancybox-close>Закрыть</button>
+		<button class="btn btn-big btn-team-modal" data-fancybox-close><span>Закрыть</span></button>
 	</div>
 </div>
 
@@ -833,7 +794,7 @@
 		<a href="#" class="modal_close" data-fancybox-close></a>
 		<div class="modal_title">Произошла ошибка</div>
 		<div class="modal_text">Не удалось отправить данные. Попробуйте позже или перезагрузите страницу.</div>
-		<button class="btn btn-big btn-team-modal" data-fancybox-close>Закрыть</button>
+		<button class="btn btn-big btn-team-modal" data-fancybox-close><span>Закрыть</span></button>
 	</div>
 </div>
 
