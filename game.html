@@ -85,7 +85,8 @@
     window.onload = function(){
         $.fancybox.open({
             src: '#startgame_modal',
-            type: 'inline'
+            type: 'inline',
+            touch: false
         });
     };
     // жмем на кнопку начать игру в модалке
@@ -102,12 +103,14 @@
         if(score > 0) {
             $.fancybox.open({
                 src: '#endgame_modal',
-                type: 'inline'
+                type: 'inline',
+                touch: false
             });
         } else {
             $.fancybox.open({
                 src: '#informationgame_modal',
-                type: 'inline'
+                type: 'inline',
+                touch: false
             });
         }
     }
