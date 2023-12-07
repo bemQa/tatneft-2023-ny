@@ -60753,9 +60753,9 @@ var Game = /** @class */function () {
   Game.prototype.init = function () {
     var _this = this;
     PIXI.Assets.addBundle('fonts', {
-      cervoLight: 'fonts/Cervo-Light.woff',
-      cervoMedium: 'fonts/Cervo-Medium.woff',
-      cervoRegular: 'fonts/Cervo-Regular.woff'
+      cervoLight: '/fonts/Cervo-Light.woff',
+      cervoMedium: '/fonts/Cervo-Medium.woff',
+      cervoRegular: '/fonts/Cervo-Regular.woff'
     });
     PIXI.Assets.addBundle('images', {
       player: '/dist/player.png',
