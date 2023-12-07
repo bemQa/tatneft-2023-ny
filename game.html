@@ -99,7 +99,8 @@
     // при завершении игры склоняем кол-во бонусов и открываем модалку с инфо о завершении игры
     let points_count = $('.points-count');
     window.game.onGameOver = (score, time) => {
-        points_count.html(score + ' ' + declOfNum(score, ['бонус', 'бонуса', 'бонусов']));
+        let score_x4 = score * 4;
+        points_count.html(score_x4 + ' ' + declOfNum(score_x4, ['бонус', 'бонуса', 'бонусов']));
         if(score > 0) {
             $.fancybox.open({
                 src: '#endgame_modal',
