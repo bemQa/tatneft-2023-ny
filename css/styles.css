@@ -718,11 +718,11 @@ textarea.input_text {
 
 .modal_content {
     position: absolute;
-    top: 50rem;
+    top: 100rem;
     left: 50%;
     transform: translate(-50%, 0);
-    padding: 64rem;
-    width: 710rem;
+    padding: 40rem 20rem;
+    width: 375rem;
     /* height: max-content;
     max-height: 90vh; */
     background: #fff;
@@ -746,7 +746,7 @@ textarea.input_text {
 .modal#form-authorization {
     position: relative;
     display: none;
-    width: 710px;
+    width: 375px;
     height: 640px;
 }
 
@@ -780,8 +780,8 @@ textarea.input_text {
 
 .modal_title {
     margin-bottom: 8rem;
-    font-weight: 500;
-    font-size: 60rem;
+    font-weight: 400;
+    font-size: 44rem;
     line-height: 1;
     letter-spacing: 0.6rem;
     color: #000;
@@ -2408,10 +2408,6 @@ body {
         font-size: 42rem;
         letter-spacing: 0.42rem;
     }
-
-    .modal_content {
-        top: 25rem;
-    }
 }
 /*end adaptive styles*/
 
@@ -2516,12 +2512,6 @@ body {
         max-width: 260rem;
         width: 100%;
         margin: 0 auto;
-    }
-
-    .modal_content {
-        top: 0;
-        width: 100%;
-        padding: 40rem 20rem;
     }
 
     .section-winners .container {
