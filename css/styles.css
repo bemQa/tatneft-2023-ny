@@ -2763,6 +2763,10 @@ body {
         width: 260rem;
         height: auto;
     }
+
+    .modal_content {
+        top: 50rem;
+    }
 }
 /*end laptop styles*/
 
@@ -3129,6 +3133,10 @@ body {
         right: auto;
         width: max-content;
         background: #fff;
+    }
+
+    .modal_content {
+        top: 25rem;
     }
 }
 

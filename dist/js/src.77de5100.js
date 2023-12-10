@@ -36073,6 +36073,10 @@ var ArrowScreenControls = /** @class */function () {
     var down = new PIXI.Sprite(this.sprite);
     var right = new PIXI.Sprite(this.sprite);
     var up = new PIXI.Sprite(this.sprite);
+    [left, down, right, up].forEach(function (s) {
+      s.width = 28;
+      s.height = 28;
+    });
     this.left = left;
     this.back = down;
     this.right = right;
@@ -36089,16 +36093,21 @@ var ArrowScreenControls = /** @class */function () {
     up.x = down.x;
     up.y = -up.height - 4;
     this.container.addChild(left, down, right, up);
+    var scale = 2;
+    // console.log(up.width); // 28
     if (_constants.LEVEL_WIDTH < _constants.CANVAS_SIZE.WIDTH) {
       this.container.x = _constants.LEVEL_WIDTH - this.container.width - 45 * 2 + up.width;
     } else {
       this.container.x = _constants.CANVAS_SIZE.WIDTH - this.container.width - 45 * 2 + up.width;
       if (_constants.CANVAS_SIZE.WIDTH < 1024) {
-        this.container.x = _constants.CANVAS_SIZE.WIDTH - this.container.width - 25 * 2 + up.width;
+        this.container.scale.x = scale;
+        this.container.scale.y = scale;
+        this.container.x = _constants.CANVAS_SIZE.WIDTH + up.width * scale / 2 - window.innerWidth / 2 - this.container.width / 2;
       }
     }
     if (window.innerWidth < 1024) {
-      this.container.y = window.innerHeight - this.container.width - 5 + up.height * 2;
+      // this.container.y = window.innerHeight - this.container.width - 5 + up.height * 2;
+      this.container.y = window.innerHeight - up.width * scale;
     } else {
       this.container.y = window.innerHeight - this.container.width - 35 + up.height * 2;
     }
@@ -52219,7 +52228,9 @@ var PLayer = /** @class */function () {
   };
 
   PLayer.prototype.placePhysicsBodyOnScene = function () {
-    this.physicsBody = Matter.Bodies.rectangle(743.2 + _constants.LEVEL_SHIFT, 690, 120, 60, {
+    this.physicsBody = Matter.Bodies.rectangle(743.2 + _constants.LEVEL_SHIFT, 690,
+    // window.innerHeight - (window.innerHeight / 100 * 25),
+    120, 60, {
       isStatic: false,
       render: {
         fillStyle: 'transparent',
@@ -52310,7 +52321,9 @@ var PLayer = /** @class */function () {
     _viewport.mainViewport.viewport.x = _constants.CANVAS_SIZE.WIDTH - this.element.x - _constants.CANVAS_SIZE.WIDTH + _constants.CANVAS_SIZE.WIDTH / 2;
   };
   PLayer.prototype.updateViewport = function () {
-    _viewport.mainViewport.viewport.y = window.innerHeight - window.innerHeight / 100 * 25 - this.element.y;
+    var mobileShift = window.innerWidth < 1024 ? this.settings.arrows.container.height + this.element.width : window.innerHeight / 100 * 25;
+    // console.log(mobileShift);
+    _viewport.mainViewport.viewport.y = window.innerHeight - this.element.y - mobileShift;
     if (_viewport.mainViewport.viewport.y < 0) {
       _viewport.mainViewport.viewport.y = 0;
     }
@@ -55280,7 +55293,7 @@ var Game = /** @class */function () {
     });
     PIXI.Assets.addBundle('images', {
       player: '/dist/player.png',
-      arrowIcon: '/dist/arrow.png',
+      arrowIcon: '/dist/arrows 22.png',
       timerBg: '/dist/timer.png',
       levelPiece1: '/dist/level/mainBg/row-1-column-1.jpg',
       levelPiece2: '/dist/level/mainBg/row-2-column-1.jpg',
