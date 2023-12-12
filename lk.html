@@ -272,6 +272,15 @@
 	</div>
 </div>
 
+<div class="modal" id="checks_modal">
+	<div class="modal_content">
+		<a href="#" class="modal_close fancy-close"></a>
+		<div class="modal_title">Информация</div>
+		<div class="modal_text">Ваши чеки проходят модерацию в течение 1 рабочего дня, ожидайте их появления в личном кабинете.</div>
+		<button class="btn btn-big btn-team-modal fancy-close"><span>Закрыть</span></button>
+	</div>
+</div>
+
 <script src="libs/fancybox/jquery.fancybox.min.js"></script>
 <script src="libs/simplebar/simplebar.min.js"></script>
 <script src="libs/jquery.inputmask.min.js"></script>
@@ -279,6 +288,56 @@
 <script src="libs/select2/select2.min.js"></script>
 <script src="libs/jquery.countdown.min.js"></script>
 <script src="js/scripts.js"></script>
+
+<script>
+	function getCookie(name) {
+		let matches = document.cookie.match(new RegExp(
+			"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+		));
+		return matches ? decodeURIComponent(matches[1]) : undefined;
+	}
+	
+	function setCookie(name, value, options = {}) {
+	
+		options = {
+			path: '/',
+			// при необходимости добавьте другие значения по умолчанию
+			...options
+		};
+	
+		if (options.expires instanceof Date) {
+			options.expires = options.expires.toUTCString();
+		}
+	
+		let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+	
+		for (let optionKey in options) {
+			updatedCookie += "; " + optionKey;
+			let optionValue = options[optionKey];
+			if (optionValue !== true) {
+				updatedCookie += "=" + optionValue;
+			}
+		}
+	
+		document.cookie = updatedCookie;
+	}
+
+	if(getCookie('checks_modal') != 1) {
+		$.fancybox.open({
+			src: '#checks_modal',
+			type: 'inline',
+			touch: false
+		});
+	}
+
+	$('body').on('click', '.fancy-close', function(e) {
+		e.preventDefault();
+		if(getCookie('checks_modal') != 1) {
+        	setCookie('checks_modal', 1, {'max-age': 31536000});
+		}
+		$.fancybox.close();
+    });
+</script>
 
 </body>
 </html>
