@@ -55362,8 +55362,9 @@ var Game = /** @class */function () {
         _this.gameOver();
       });
       _this.timer = timer;
-      _this.start();
+      // this.start();
     };
+
     var initPlayer = function initPlayer() {
       var player = new _player.default({
         img: assetsGlobal['player'],
