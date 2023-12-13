@@ -52320,6 +52320,7 @@ var PLayer = /** @class */function () {
   PLayer.prototype.initViewport = function () {
     _viewport.mainViewport.viewport.x = _constants.CANVAS_SIZE.WIDTH - this.element.x - _constants.CANVAS_SIZE.WIDTH + _constants.CANVAS_SIZE.WIDTH / 2;
   };
+  //
   PLayer.prototype.updateViewport = function () {
     var mobileShift = window.innerWidth < 1024 ? this.settings.arrows.container.height + this.element.width : window.innerHeight / 100 * 25;
     // console.log(mobileShift);
@@ -55349,24 +55350,20 @@ var Game = /** @class */function () {
     document.querySelector('.game-wrap').appendChild(_scene.mainScene.app.view);
     _scene.mainScene.app.stage.addChild(_viewport.mainViewport.viewport);
     var initTimers = function initTimers() {
-      // const countdown = new Countdown(() => {
-      // });
       var timer = new _timer.default(assetsGlobal, function () {
         console.log('timer end');
         if (_this.alreadyGameOver) {
           return;
         }
         _this.alreadyGameOver = true;
-        _this.gameOver();
         if (_this.onGameOver) {
           _this.onGameOver(_this.level.collectablesCount, _this.timer.time);
         }
+        _this.gameOver();
       });
-      // this.countdown = countdown;
       _this.timer = timer;
-      // this.start();
+      _this.start();
     };
-
     var initPlayer = function initPlayer() {
       var player = new _player.default({
         img: assetsGlobal['player'],
@@ -55382,9 +55379,9 @@ var Game = /** @class */function () {
           return;
         }
         _this.alreadyGameOver = true;
-        _this.gameOver();
+        var timerTime = _this.timer.time;
         if (_this.onGameOver) {
-          _this.onGameOver(itemsCollectedCount, _this.timer.time);
+          _this.onGameOver(itemsCollectedCount, timerTime);
         }
         _this.gameOver();
       };
@@ -55392,21 +55389,12 @@ var Game = /** @class */function () {
     initTimers();
     initPlayer();
     initLevel();
-    // const levelBg = mainViewport.viewport.addChild(new PIXI.Sprite(assetsGlobal['levelBg']));
-    // // levelBg.tint = 0xff0000;
-    // levelBg.width  = 500;
-    // levelBg.height = 20;
-    // levelBg.y = 0
-    // mainScene.app.stage.addChild(levelBg);
     arrowControls.addToScene();
     this.adaptiveLayouts();
     this.gameLogic();
   };
   Game.prototype.gameLogic = function () {
     var _this = this;
-    var totalCount = 0;
-    var intervalId;
-    var lastTime = 0;
     _scene.mainScene.app.ticker.add(function (delta) {
       _this.player.update(delta);
     });
