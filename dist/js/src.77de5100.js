@@ -55393,6 +55393,9 @@ var Game = /** @class */function () {
     arrowControls.addToScene();
     this.adaptiveLayouts();
     this.gameLogic();
+    if (this.onLoad) {
+      this.onLoad();
+    }
   };
   Game.prototype.gameLogic = function () {
     var _this = this;
@@ -55450,6 +55453,7 @@ window.game = game;
 game.onGameOver = function (itemsCollectedCount, timeInSeconds) {
   console.log(itemsCollectedCount, timeInSeconds);
 };
+game.onLoad = function () {};
 var _default = _game.default;
 exports.default = _default;
 },{"./core/game":"Dffd"}]},{},["QCba"], null)

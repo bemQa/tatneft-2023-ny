@@ -82,7 +82,7 @@
     }
 
     // после прогрузки страницы откроется модалка с началом игры
-    window.onload = function(){
+    window.game.onLoad = () => {
         $.fancybox.open({
             src: '#startgame_modal',
             type: 'inline',
