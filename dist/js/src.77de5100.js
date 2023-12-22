@@ -50237,6 +50237,10 @@ var PhysicsScene = /** @class */function () {
     var screenHeight = window.innerHeight;
     var WALL_THICKNESS = 100;
     var halfWallThickness = WALL_THICKNESS * .5;
+    // let offsetY = 0;
+    // if (window.innerHeight >= 960 && window.innerWidth >= 1024){
+    // 	offsetY = window.innerWidth - 960
+    // } 
     var wallTop = Matter.Bodies.rectangle(screenWidth / 2, -halfWallThickness, screenWidth, WALL_THICKNESS, {
       isStatic: true,
       restitution: 0
@@ -52228,9 +52232,24 @@ var PLayer = /** @class */function () {
   };
 
   PLayer.prototype.placePhysicsBodyOnScene = function () {
-    this.physicsBody = Matter.Bodies.rectangle(743.2 + _constants.LEVEL_SHIFT, 690,
-    // window.innerHeight - (window.innerHeight / 100 * 25),
-    120, 60, {
+    var offsetY = 0;
+    var posY = 0;
+    // if(window.innerWidth >= 1024){
+    // }
+    // if (window.innerHeight >= 960 && window.innerWidth >= 1024){
+    // 	offsetY = window.innerWidth - 960
+    // }
+    // posY = window.innerHeight - (window.innerHeight / 100 * 25)
+    // if(window.innerHeight >= 1420 && window.innerWidth >= 1024){
+    // 	console.log(1);
+    // 	posY = 960 - offsetY;
+    // } else {
+    // 	console.log(2);
+    // 	posY = window.innerHeight - (window.innerHeight / 100 * 25)
+    // }
+    this.physicsBody = Matter.Bodies.rectangle(743.2 + _constants.LEVEL_SHIFT,
+    // 690,
+    posY, 120, 60, {
       isStatic: false,
       render: {
         fillStyle: 'transparent',
@@ -52323,9 +52342,9 @@ var PLayer = /** @class */function () {
   //
   PLayer.prototype.updateViewport = function () {
     var mobileShift = window.innerWidth < 1024 ? this.settings.arrows.container.height + this.element.width : window.innerHeight / 100 * 25;
-    // console.log(mobileShift);
+    console.log(_viewport.mainViewport.viewport.y);
     _viewport.mainViewport.viewport.y = window.innerHeight - this.element.y - mobileShift;
-    if (_viewport.mainViewport.viewport.y < 0) {
+    if (_viewport.mainViewport.viewport.y <= 0) {
       _viewport.mainViewport.viewport.y = 0;
     }
     if (_viewport.mainViewport.viewport.y > 11945) {
