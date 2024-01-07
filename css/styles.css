@@ -2,6 +2,7 @@
 
 html {
     line-height: 1;
+    text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -1963,11 +1964,12 @@ body {
 }
 
 .points {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50rem;
-    padding: 5rem 16rem;
+    /* height: 50rem; */
+    padding: 4rem 16rem 0;
     margin-right: 20rem;
     background: #679400;
     border-radius: 25rem;
@@ -3098,7 +3100,7 @@ body {
     }
 
     .points {
-        height: 42rem;
+        /* height: 42rem; */
         margin-right: 0;
         font-size: 32rem;
     }
